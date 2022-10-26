@@ -1,7 +1,9 @@
-## GET CREDENTIALS
+## Install Argo
+```shell
+cd argo-cd
+./install.sh
 ```
-kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d; echo
-```
+
 
 ## Change service 
 Service Type Load Balancer
@@ -25,6 +27,11 @@ NAME            TYPE           CLUSTER-IP    EXTERNAL-IP   PORT(S)              
 argocd-server   LoadBalancer   10.98.97.22   <pending>     80:31490/TCP,443:32217/TCP   152m
 
 ```
+## GET Credentials
+```
+kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d; echo
+```
+
 ## Acess Argo UI on Browser
 
 - example http://192.168.49.2:31490
@@ -50,5 +57,3 @@ argocd account update-password
 argocd app create guestbook --repo https://github.com/argoproj/argocd-example-apps.git --path guestbook --dest-server https://kubernetes.default.svc --dest-namespace default
 
 ```
-
-
