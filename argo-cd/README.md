@@ -45,12 +45,17 @@ rm argocd-linux-amd64
 
 ## Login in Argo CLI
 ```
-argocd login <ARGOCD_SERVER>
+argocd login 192.168.49.2:31490
 ```
+
+
 ## Change Admin Password
 ```
 argocd account update-password
 ```
+enter currenty password
+
+after input new password
 
 ## Crete um Deploy on Argo CLI
 ```
