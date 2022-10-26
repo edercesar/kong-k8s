@@ -1,0 +1,12 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: kong-service
+spec:
+  selector:
+    app: kong-app
+  ports:
+    - name: porta8000
+      port: 8000 # Default port for kong
+    - name: porta8001
+      port: 8001

@@ -1,0 +1,16 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kong-app
+spec:
+  selector:
+    matchLabels:
+      app: kong-app
+  template:
+    metadata:
+      labels:
+        app: kong-app
+    spec:
+      containers:
+      - name: kong
+        image: edercesar/kong-k8s:v5
