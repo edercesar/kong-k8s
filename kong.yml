@@ -1,0 +1,16 @@
+_format_version: "1.1"
+_transform: true
+
+services:
+- host: servicea
+  name: servicoa
+  port: 8080
+  protocol:  http
+  routes:
+    - name: Rotaa
+      hosts:
+        - "eder.com.br"
+      paths:
+      - /conversor
+      strip_path: true
+
